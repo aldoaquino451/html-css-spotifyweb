@@ -6,12 +6,7 @@
 
   /* color  */
   --color-darkblue: #0084fd;
-  --color-lightblue: #b5ddff;
-  --color-violet: #9792e4;
-  --color-black: #333333;
-  --color-yellow: #fdc15f;
-  --color-grey: #5a6e7f;
-  --color-lightgrey: #737373;
+
 
   /* size  */
 
@@ -21,12 +16,6 @@
 /*--------------------
       UTILITIES
 ---------------------*/ 
-
-.container {
-  width: calc(100vw - 60px);
-  max-width: 1140px;
-  margin: 0 auto;
-}
 
 .row {
   display: flex;
@@ -57,4 +46,9 @@
 
 .hidden {
   display: none;
+}
+
+.db {
+  background-color: lightcoral;
+  border: 1px solid black;
 }

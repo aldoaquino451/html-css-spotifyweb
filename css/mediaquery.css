@@ -4,10 +4,26 @@
       TABLET
 ---------------------*/
 
-
+@media screen and (max-width:1100px) {
+  
+}
 
 
 
 /*--------------------
-      DESKTOP
+      MOBILE
 ---------------------*/ 
+
+@media screen and (max-width:700px) {
+  
+}
+
+
+
+/*---------------------------
+      MOBILE - sidebar
+----------------------------*/ 
+
+@media screen and (max-width:600px) {
+  
+}
