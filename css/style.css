@@ -1,3 +1,42 @@
+/*--------------------
+      VARIABLES
+---------------------*/ 
+
+:root {
+
+  /* color  */
+  --color-sidebar: #000000;
+  --color-music: #141922;
+  --color-player: #282828;
+  --color-darkgrey: #797c80;
+  --color-lightgrey: #d2d2d2; 
+  /* size */ 
+  --footer-height: 90px;
+  --main-height: calc(100vh - var(--footer-height));
+  --sidebar-width: 230px;
+  --sidebar-width-sm: 90px;
+  --player-width: calc(100% - var(--sidebar-width));
+  --topbar-height: 90px;
+  /**/
+  --logo-height: 90px;
+  --menu-height: 90px;
+  --bottom-height: 90px;
+  --playlist-height: var(100% - var(--logo-height) - var(--menu-height) - var(--bottom-height));
+  /**/
+  --card-gap: 15px;
+  --card-width-lg: calc((100% - 5*var(--card-gap)) * 1/6);
+  --card-width-md: calc((100% - 3*var(--card-gap)) * 1/4);
+  --card-width-sm: calc((100% - 1*var(--card-gap)) * 1/2);
+
+
+}
+
+#calcolatrice {
+  width: auto;
+}
+
+
+
 /* ---------------
     GENERAL
 ----------------*/
@@ -8,84 +47,78 @@
   box-sizing: border-box;
 }
 
-main {
-  height: calc(100vh - 90px);
-}
-
-footer {
-  height: 90px;
-}
-
-.sidebar {
-  width: 230px;
-  position: relative;
-}
-
-.player {
-  width: calc(100% - 230px);
+html {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
 }
 
 img {
   display: block;
-  width: 100%;
-}
-
-a.btn {
-  display: inline-block;
+  max-width: 100%;
 }
 
 ul {
   list-style: none;
 }
 
-/* -------------------
-    PLAYER : TOPBAR
----------------------*/
-
-.topbar {
-  position: fixed;
-  width: 100%;
-  height: 90px;
+a {
+  text-decoration: none;
+  color: white;
 }
 
-
-
-/* --------------------
-    PLAYER : MUSIC
---------------------*/
-
-.music {
-  width: 100%;
-  margin-top: 90px;
+a.btn {
+  display: inline-block;
 }
 
+footer {
+  height: var(--footer-height);
+  padding: 10px;
+}
 
+main {
+  height: var(--main-height);
+}
 
+#sidebar {
+  width: var(--sidebar-width);
+  position: relative;
+}
 
+#player,
+#topbar {
+  width: var(--player-width);
+}
+
+#music {
+  width: 100%;
+  padding: 110px 20px 20px;
+  /* background-color: var(--color-music); */
+  overflow-x: auto;
+}
 
 /* ---------------
     SIDEBAR
 ----------------*/    
 
-.sidebar .logo {
-  height: 90px;
+#sidebar .logo {
+  height: var(--logo-height);
 }
 
-.sidebar .logo img:last-child {
+#sidebar .logo img:last-child {
   display: none;
 }
 
-.sidebar .main-menu {
-  height: 100px;
+#sidebar .menu {
+  height: var(--menu-height);
 }
 
-.sidebar .playlist {
-  height: calc(100% - 90px - 100px - 100px);
+#sidebar .playlist {
+  height: var(--playlist-height);
   overflow-x: auto;
 }
 
-.sidebar .bottom {
-  height: 100px;
+#sidebar .bottom {
+  height: var(--bottom-height);
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -93,11 +126,69 @@ ul {
 
 
 
-/* ----------------
-    FOOTER 
-------------------*/    
+/* -------------------
+    PLAYER : TOPBAR
+---------------------*/
+
+#topbar {
+  position: fixed;
+  height: var(--topbar-height);
+  padding: 0 20px;
+  justify-content: flex-end;
+}
+
+#topbar a {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 40px;
+}
 
 
+/* --------------------
+    PLAYER : MUSIC
+--------------------*/
 
+#music .menu ul {
+  color: var(--color-lightgrey);
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
+#music .cards { 
+  flex-wrap: wrap;
+  gap: var(--card-gap);
+}
 
+#music .card {
+  width: var(--card-width-lg);
+  border: 1px solid black;
+}
+
+/* ---------------
+    FOOTER
+----------------*/  
+
+footer .listening {
+  gap: 30px;
+}
+
+footer .listening .image {
+  width: 50px;
+}
+
+/* barra volume / secondi */
+
+footer .play-box .down {
+  width: 200px;
+}
+
+footer .volume .right {
+  width: 100px;
+}
+
+footer .play-box .down,
+footer .volume .right {
+  height: 5px;
+  background-color: #797c80;
+  border-radius: 5px;
+}

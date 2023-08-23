@@ -1,0 +1,59 @@
+/* Stiamo partendo dalla versione  DESKTOP ma si tratta di un APP DESKTOP quindi useremo la MAX-WIDTH per passare a versione TABLET o MOBILE */
+
+
+/*------------------
+    TABLET
+-------------------*/
+
+@media screen and (max-width:1100px) {
+  #music .card {
+    width: var(--card-width-md);
+  }
+}  
+
+
+
+/*------------------
+    MOBILE
+-------------------*/
+
+
+@media screen and (max-width:700px) {
+  #music .card {
+    width: var(--card-width-sm);
+  }
+}  
+
+
+
+/*------------------
+    MOBILE-sidebar
+-------------------*/
+
+@media screen and (max-width:600px) {
+
+  :root {
+    --sidebar-width: 90px;
+  }
+
+
+  .container-small {
+    padding: 0 10px;
+  }      
+
+  #sidebar .logo {
+    height: auto;
+  }
+  
+  #sidebar .logo img:first-child,
+  #sidebar .menu span,
+  #sidebar .playlist,
+  #sidebar .bottom span {
+    display: none;
+  }
+
+  #sidebar .logo img:last-child  {
+    display: block;
+  }
+
+}

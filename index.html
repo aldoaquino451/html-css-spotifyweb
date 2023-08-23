@@ -12,12 +12,12 @@
   <!-- font google  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
 
   <!-- css files  -->
   <link rel="stylesheet" href="./css/utilities.css">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/mediaquery.css">
+  <link rel="stylesheet" href="./css/media.css">
 
   <!-- titolo  -->
   <title>Spotify Web</title>
@@ -30,35 +30,35 @@
   <main class="row">
 
     <!-- SIDEBAR SECTION  -->
-    <section class="sidebar db">
+    <section id="sidebar" class=" db">
       
-      <div class="logo col container-small db-small">
+      <div class="logo col container-small db-small hidden">
         <img src="./img/logo.svg" alt="logo">
         <img src="./img/logo-small.svg" alt="logo small">
       </div>
 
-      <nav class="main-menu col container-small db-small">
+      <nav class="menu col container-small db-small hidden">
         <ul>
 
           <li class="home row">
-            <i class="fa-solid fa-house"></i>
+            <img src="./img/home.svg" alt="home">
             <span>Home</span>
           </li>
   
           <li class="search row">
-            <i class="fa-solid fa-magnifying-glass"></i>       
+            <img src="./img/search.svg" alt="search">      
             <span>Cerca</span>
           </li>
   
           <li class="library row">
-            <i>||\</i>
+            <img src="./img/libreria.svg" alt="library">
             <span>La tua libreria</span>
           </li>
 
         </ul>
       </nav>
 
-      <div class="playlist col container-small db-small">
+      <div class="playlist col container-small db-small hidden">
 
         <h2>playlist</h2>
 
@@ -69,7 +69,6 @@
 
         <div class="name">
           <ul>
-            <li>Nome Playlist Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, non.</li>
             <li>Nome Playlist</li>
             <li>Nome Playlist</li>
             <li>Nome Playlist</li>
@@ -77,38 +76,20 @@
             <li>Nome Playlist</li>
             <li>Nome Playlist</li>
             <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-
-
           </ul>
         </div>
 
       </div>
 
-      <div class="bottom container-small db-small">
+      <div class="bottom container-small db-small hidden">
 
         <div class="app">
-          <i class="fa-light fa-circle-arrow-down"></i>
+          <img src="./img/download.svg" alt="download">
           <span>Installa App</span>
         </div>
 
         <div class="account">
-          <i class="fa-regular fa-user"></i>
+          <img src="./img/profile.svg" alt="profile">
           <span>John Doe</span>
         </div>
 
@@ -119,29 +100,138 @@
     <!-- // SIDEBAR SECTION  -->
 
     <!-- PLAYER SECTION  -->
-    <section class="player row">
+    <section id="player" class=" row">
 
-      <div class="topbar db">
-        topbar
+      <!-- <div id="topbar" class=" row ai-center db">
+        <a class="uppercase" href="#">effettua l'upgrade</a>
+      </div> -->
 
-      </div>
+      <div id="music" class=" db">
 
-      <div class="music db">
+        <nav class="menu uppercase hidden">
+          <ul class="row jc-center">
+            <li>in evidenza</li>
+            <li>podcast</li>
+            <li>classifiche</li>
+            <li>generi e mood</li>
+            <li>nuove uscite</li>
+            <li>scopri</li>
+          </ul>
+        </nav>
 
-        <div class="text">
+        <div class="played col hidden">
 
-        </div>
-        <div class="cards row">
+          <h2>Recently played</h2>
 
-          <!-- <div class="card col">
-            <div class="image">
-              <img src="./img/metal_lifting.jpg" alt="metal">
+          <div class="cards row">
+
+            <div class="card col">
+              <div class="image">
+                <!-- <img src="./img/metal_lifting.jpg" alt="metal"> -->
+              </div>
+              <h3>Heavy Metal</h3>
+              <h4>Subtitle</h4>
             </div>
-            <h3></h3>
-            <span></span>
-          </div> -->
-          
+  
+            <div class="card col">
+              <div class="image">
+                <!-- <img src="./img/metal_lifting.jpg" alt="metal"> -->
+              </div>
+              <h3>Heavy Metal</h3>
+              <h4>Subtitle</h4>
+            </div>
+  
+            <div class="card col">
+              <div class="image">
+                <!-- <img src="./img/metal_lifting.jpg" alt="metal"> -->
+              </div>
+              <h3>Heavy Metal</h3>
+              <h4>Subtitle</h4>
+            </div>
+  
+            <div class="card col">
+              <div class="image">
+                <!-- <img src="./img/metal_lifting.jpg" alt="metal"> -->
+              </div>
+              <h3>Heavy Metal</h3>
+              <h4>Subtitle</h4>
+            </div>
+  
+            <div class="card col">
+              <div class="image">
+                <!-- <img src="./img/metal_lifting.jpg" alt="metal"> -->
+              </div>
+              <h3>Heavy Metal</h3>
+              <h4>Subtitle</h4>
+            </div>
+  
+            <div class="card col">
+              <div class="image">
+                <!-- <img src="./img/metal_lifting.jpg" alt="metal"> -->
+              </div>
+              <h3>Heavy Metal</h3>
+              <h4>Subtitle</h4>
+            </div>
+  
+          </div>
+  
         </div>
+
+        <div class="dailymix col hidden">
+
+          <h2>Creato per John Doe</h2>
+
+          <p>Più ascolti, più accurati saranno i suggerimenti.</p>
+
+          <div class="cards row">
+
+            <div class="card col">
+              <div class="image">
+                <img src="./img/radar.jpeg" alt="radar">
+              </div>
+              <h3>Release Radar</h3>
+            </div>
+
+            <div class="card col">
+              <div class="image">
+                <img src="./img/mixdaily.jpeg" alt="daily mix">
+              </div>
+              <h3>Daily Mix 1</h3>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="popular col hidden">
+
+          <h2>Artisti più popolari</h2>
+
+          <p>Più ascolti, più accurati saranno i tuoi suggerimenti.</p>
+
+          <div class="cards row">
+
+            <div class="card col">
+              <div class="image">
+                <img src="./img/einaudi.jpeg" alt="einaudi">
+              </div>
+
+              <h3>Einaudi</h3>
+
+            </div>
+
+            <div class="card">
+              <div class="image">
+                <img src="./img/einaudi.jpeg" alt="einaudi">
+              </div>
+
+              <h3>Einaudi</h3>
+
+            </div>
+    
+          </div>
+        </div>
+
       </div>
 
     </section>
@@ -150,14 +240,60 @@
   </main>
 
 
+  <footer class="col jc-center db">
+    <div class="row gap-10 s-between">
 
+      <div class="listening row hidden">
 
+        <div class="left row gap-10">
 
+          <div class="image">
+            <img src="./img/sinister.jpeg" alt="sinister">
+          </div>
 
-  <footer class="db">
-    <div class="row">
+          <div class="text col">
+            <h3>Sinister</h3>
+            <h4>Subtitle</h4>
+          </div>
 
-      footer
+        </div>
+
+        <div class="right row gap-10">
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-regular fa-folder"></i>
+        </div>
+  
+      </div>
+
+      <div class="play-box col gap-10 hidden">
+
+        <div class="up">
+          <i class="fa-solid fa-shuffle"></i>
+          <i class="fa-solid fa-backward-step"></i>
+          <i class="fa-regular fa-circle-play"></i>
+          <i class="fa-solid fa-forward-step"></i>
+          <i class="fa-solid fa-rotate-right"></i>
+        </div>
+        
+        <div class="down">
+          <!-- <i class="fa-solid fa-circle fa-xs"></i> -->
+        </div>
+
+      </div>
+
+      <div class="volume row hidden">
+
+        <div class="left row">
+          <i class="fa-solid fa-list-ul"></i>
+          <i class="fa-solid fa-desktop"></i>
+        </div>
+
+        <div class="right row">
+          <i class="fa-solid fa-volume-high"></i>
+          <!-- <i class="fa-solid fa-circle fa-xs"></i> -->
+        </div>
+
+      </div>
 
     </div>
   </footer>

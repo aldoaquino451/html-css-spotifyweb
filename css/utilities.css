@@ -1,19 +1,4 @@
 /*--------------------
-      VARIABLES
----------------------*/ 
-
-:root {
-
-  /* color  */
-  --color-darkblue: #0084fd;
-
-
-  /* size  */
-
-
-}
-
-/*--------------------
       UTILITIES
 ---------------------*/ 
 
@@ -47,6 +32,14 @@
 .center {
   justify-content: center;
   align-items: center;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .hidden {
