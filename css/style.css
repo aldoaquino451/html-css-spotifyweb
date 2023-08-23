@@ -18,10 +18,24 @@ footer {
 
 .sidebar {
   width: 230px;
+  position: relative;
 }
 
 .player {
+  width: calc(100% - 230px);
+}
+
+img {
+  display: block;
   width: 100%;
+}
+
+a.btn {
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
 }
 
 /* -------------------
@@ -53,8 +67,29 @@ footer {
     SIDEBAR
 ----------------*/    
 
+.sidebar .logo {
+  height: 90px;
+}
 
+.sidebar .logo img:last-child {
+  display: none;
+}
 
+.sidebar .main-menu {
+  height: 100px;
+}
+
+.sidebar .playlist {
+  height: calc(100% - 90px - 100px - 100px);
+  overflow-x: auto;
+}
+
+.sidebar .bottom {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
 
 
 
