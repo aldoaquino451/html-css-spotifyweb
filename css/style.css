@@ -21,10 +21,8 @@ footer {
 }
 
 .player {
-  width: calc(100% - 230px);
+  width: 100%;
 }
-
-
 
 /* -------------------
     PLAYER : TOPBAR
