@@ -8,26 +8,28 @@
   --color-sidebar: #000000;
   --color-music: #141922;
   --color-player: #282828;
-  --color-darkgrey: #797c80;
+  --color-darkgrey: #6d6d6d;
   --color-lightgrey: #d2d2d2; 
-  /* size */ 
+
+  /* height */ 
+  --topbar-height: 90px;
   --footer-height: 90px;
   --main-height: calc(100vh - var(--footer-height));
+  --logo-height: 90px;
+  --menu-height: 105px;
+  --bottom-height: 90px;
+  --playlist-height: calc(100% - var(--logo-height) - var(--menu-height) - var(--bottom-height));
+
+  /* width */
   --sidebar-width: 230px;
   --sidebar-width-sm: 90px;
   --player-width: calc(100% - var(--sidebar-width));
-  --topbar-height: 90px;
-  /**/
-  --logo-height: 90px;
-  --menu-height: 90px;
-  --bottom-height: 90px;
-  --playlist-height: var(100% - var(--logo-height) - var(--menu-height) - var(--bottom-height));
-  /**/
+
+  /* gap */
   --card-gap: 15px;
   --card-width-lg: calc((100% - 5*var(--card-gap)) * 1/6);
   --card-width-md: calc((100% - 3*var(--card-gap)) * 1/4);
   --card-width-sm: calc((100% - 1*var(--card-gap)) * 1/2);
-
 
 }
 
@@ -49,7 +51,9 @@
 
 html {
   font-family: 'Montserrat', sans-serif;
-  color: white;
+  color: var(--color-darkgrey);
+  font-size: 14px;
+  font-weight: 700;
 }
 
 img {
@@ -77,11 +81,13 @@ footer {
 
 main {
   height: var(--main-height);
+  overflow: hidden;
 }
 
 #sidebar {
   width: var(--sidebar-width);
   position: relative;
+  background-color: var(--color-sidebar);
 }
 
 #player,
@@ -100,31 +106,81 @@ main {
     SIDEBAR
 ----------------*/    
 
+#sidebar svg {
+  height: 25px;
+  padding-right: 5px;
+}
+
+#sidebar svg * {
+  fill: var(--color-darkgrey);
+}
+
 #sidebar .logo {
   height: var(--logo-height);
+  padding: 20px;
 }
 
 #sidebar .logo img:last-child {
   display: none;
 }
 
+#sidebar .logo img {
+  width: 70%;
+}
+
 #sidebar .menu {
   height: var(--menu-height);
+}
+
+#sidebar .menu li {
+  border-left: 3px solid var(--color-sidebar);
+  padding: 5px 17px;
 }
 
 #sidebar .playlist {
   height: var(--playlist-height);
   overflow-x: auto;
+  padding: 20px;
+}
+
+#sidebar .playlist h3 {
+  color: white;
+}
+
+#sidebar .playlist i {
+  font-size: 40px;
 }
 
 #sidebar .bottom {
   height: var(--bottom-height);
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+  padding: 10px 20px ;
+  color: white;
 }
 
+#sidebar .bottom .app {
+  border-bottom: 1px solid var(--color-darkgrey) ;
+  padding-bottom: 10px;
+}
 
+#sidebar .bottom .app svg {
+  height: 20px;
+}
+
+#sidebar .bottom .account {
+  padding-top: 10px;
+  border-top: 1px solid var(--color-darkgrey) ;
+} 
+
+#sidebar .bottom .account svg {
+  background-color: var(--color-darkgrey);
+  border-radius: 100%;
+  margin-right: 10px;
+  padding-right: 0;
+}
+
+#sidebar .bottom svg * {
+  fill: white;
+}
 
 /* -------------------
     PLAYER : TOPBAR

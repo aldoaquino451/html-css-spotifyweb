@@ -36,20 +36,12 @@
     --sidebar-width: 90px;
   }
 
-
-  .container-small {
-    padding: 0 10px;
-  }      
+  .hide {
+    display: none;
+  } 
 
   #sidebar .logo {
     height: auto;
-  }
-  
-  #sidebar .logo img:first-child,
-  #sidebar .menu span,
-  #sidebar .playlist,
-  #sidebar .bottom span {
-    display: none;
   }
 
   #sidebar .logo img:last-child  {

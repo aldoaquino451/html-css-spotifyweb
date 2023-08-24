@@ -2,11 +2,6 @@
       UTILITIES
 ---------------------*/ 
 
-.container-small {
-  padding: 0 20px;
-}
-
-
 .row {
   display: flex;
   flex-direction: row;
@@ -38,6 +33,10 @@
   gap: 10px;
 }
 
+.gap-15 {
+  gap: 15px;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -47,11 +46,22 @@
 }
 
 .db {
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
   border: 1px solid black;
 }
 
 .db-small {
-  background-color: lightblue;
+  /* background-color: lightblue; */
   border: 1px solid black;
+}
+
+
+
+#sidebar .home.active {
+  border-color: #adff2f;
+  color: white;
+}
+
+#sidebar .home.active svg * {
+  fill: white;
 }
