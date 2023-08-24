@@ -6,30 +6,33 @@
 
   /* color  */
   --color-sidebar: #000000;
-  --color-music: #141922;
-  --color-player: #282828;
+  --color-player: #141922;
+  --color-bottombar: #282828;
   --color-darkgrey: #6d6d6d;
   --color-lightgrey: #d2d2d2; 
 
-  /* height */ 
-  --topbar-height: 90px;
-  --footer-height: 90px;
-  --main-height: calc(100vh - var(--footer-height));
-  --logo-height: 90px;
-  --menu-height: 105px;
-  --bottom-height: 90px;
-  --playlist-height: calc(100% - var(--logo-height) - var(--menu-height) - var(--bottom-height));
 
   /* width */
   --sidebar-width: 230px;
-  --sidebar-width-sm: 90px;
   --player-width: calc(100% - var(--sidebar-width));
 
-  /* gap */
+
+  /* card size */
   --card-gap: 15px;
   --card-width-lg: calc((100% - 5*var(--card-gap)) * 1/6);
   --card-width-md: calc((100% - 3*var(--card-gap)) * 1/4);
   --card-width-sm: calc((100% - 1*var(--card-gap)) * 1/2);
+
+  
+  /* sidebar size */ 
+  --logo-height: 90px;
+  --menu-height: 105px;
+  --playlist-height: calc(100% - var(--logo-height) - var(--menu-height) - var(--bottom-height));
+  --bottom-height: 90px;
+
+  /* control bars  */
+  --time-control: 30%;
+  --volume-control: 70%;
 
 }
 
@@ -43,11 +46,15 @@
     GENERAL
 ----------------*/
 
+/* reset  */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* tag container  */
 
 html {
   font-family: 'Montserrat', sans-serif;
@@ -56,13 +63,22 @@ html {
   font-weight: 700;
 }
 
+main {
+  height: calc(100vh - 90px);
+  overflow: hidden;
+}
+
+footer {
+  height: 90px;
+  padding: 0 10px;
+  background-color: var(--color-bottombar);
+}
+
+/* tag element  */
+
 img {
   display: block;
   max-width: 100%;
-}
-
-ul {
-  list-style: none;
 }
 
 a {
@@ -70,63 +86,48 @@ a {
   color: white;
 }
 
-a.btn {
-  display: inline-block;
+ul {
+  list-style: none;
 }
 
-footer {
-  height: var(--footer-height);
-  padding: 10px;
-}
 
-main {
-  height: var(--main-height);
-  overflow: hidden;
-}
-
-#sidebar {
-  width: var(--sidebar-width);
-  position: relative;
-  background-color: var(--color-sidebar);
-}
-
-#player,
-#topbar {
-  width: var(--player-width);
-}
-
-#music {
-  width: 100%;
-  padding: 110px 20px 20px;
-  /* background-color: var(--color-music); */
-  overflow-x: auto;
-}
 
 /* ---------------
     SIDEBAR
 ----------------*/    
 
+#sidebar {
+  position: relative;
+  width: var(--sidebar-width);
+  background-color: var(--color-sidebar);
+}
+
+/* general */
+
 #sidebar svg {
   height: 25px;
-  padding-right: 5px;
 }
 
 #sidebar svg * {
   fill: var(--color-darkgrey);
 }
 
+/* logo */
+
 #sidebar .logo {
   height: var(--logo-height);
   padding: 20px;
+}
+
+#sidebar .logo img {
+  width: 70%;
 }
 
 #sidebar .logo img:last-child {
   display: none;
 }
 
-#sidebar .logo img {
-  width: 70%;
-}
+/* menu */
 
 #sidebar .menu {
   height: var(--menu-height);
@@ -136,6 +137,8 @@ main {
   border-left: 3px solid var(--color-sidebar);
   padding: 5px 17px;
 }
+
+/* playlist */
 
 #sidebar .playlist {
   height: var(--playlist-height);
@@ -151,24 +154,25 @@ main {
   font-size: 40px;
 }
 
+/* bottom */
+
 #sidebar .bottom {
   height: var(--bottom-height);
   padding: 10px 20px ;
   color: white;
 }
 
-#sidebar .bottom .app {
-  border-bottom: 1px solid var(--color-darkgrey) ;
-  padding-bottom: 10px;
+#sidebar .bottom svg * {
+  fill: white;
 }
 
-#sidebar .bottom .app svg {
-  height: 20px;
+#sidebar .bottom .app {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-darkgrey);
 }
 
 #sidebar .bottom .account {
   padding-top: 10px;
-  border-top: 1px solid var(--color-darkgrey) ;
 } 
 
 #sidebar .bottom .account svg {
@@ -178,73 +182,156 @@ main {
   padding-right: 0;
 }
 
-#sidebar .bottom svg * {
-  fill: white;
+#sidebar .bottom .app svg {
+  height: 20px;
 }
+
+
 
 /* -------------------
-    PLAYER : TOPBAR
+    PLAYER 
 ---------------------*/
 
-#topbar {
-  position: fixed;
-  height: var(--topbar-height);
-  padding: 0 20px;
-  justify-content: flex-end;
+#player {
+  width: var(--player-width);
+  padding: 110px 20px 50px;
+  gap: 50px;
+  background-color: var(--color-player);
+  overflow-x: auto;
 }
 
-#topbar a {
-  padding: 10px;
+/* general  */
+
+#player h2, 
+#player h3 {
+  color: white;
+}
+
+#player .cards { 
+  flex-wrap: wrap;
+  gap: var(--card-gap);
+}
+
+#player .card {
+  width: var(--card-width-lg);
+  padding-bottom: 20px;
+  gap: 10px;
+}
+
+
+/* topbar  */
+
+#player .topbar {
+  position: fixed;
+  width: var(--player-width);
+  height: 90px;
+  margin: -110px -20px;
+  padding: 10px 20px;
+  justify-content: flex-end;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#player .topbar a {
+  padding: 10px 40px;
   border: 1px solid white;
   border-radius: 40px;
 }
 
 
-/* --------------------
-    PLAYER : MUSIC
---------------------*/
+/* menu */
 
-#music .menu ul {
-  color: var(--color-lightgrey);
+#player .played,
+#player .dailymix,
+#player .popular {
+  gap: 25px;
+}
+
+#player .menu span {
+  width: 50px;
+  height: 2px;
+  margin: 2px auto;
+  background-color: var(--color-player);
+}
+
+#player .menu a {
+  color: var(--color-darkgrey);
+}  
+
+#player .menu ul {
   flex-wrap: wrap;
-  gap: 10px;
-}
+  gap: 20px;
+}  
 
-#music .cards { 
-  flex-wrap: wrap;
-  gap: var(--card-gap);
-}
 
-#music .card {
-  width: var(--card-width-lg);
-  border: 1px solid black;
-}
 
 /* ---------------
-    FOOTER
+    BOTTOMBAR
 ----------------*/  
 
-footer .listening {
+#bottombar {
+  height: 100%;
+}
+
+/* general  */
+
+#bottombar .playbox .down,
+#bottombar .volume .right {
+  height: 5px;
+  border-radius: 5px;
+  background-color: #797c80;
+}
+
+/* listening  */
+
+#bottombar .listening {
   gap: 30px;
 }
 
-footer .listening .image {
-  width: 50px;
+#bottombar .listening .left .image {
+  width: 60px;
 }
 
-/* barra volume / secondi */
+#bottombar .listening .left .text h4 {
+  color: white;
+}
 
-footer .play-box .down {
+#bottombar .listening .right {
+  font-size: 16px;
+}
+
+/* playbox  */
+
+#bottombar .playbox {
+  gap: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+#bottombar .playbox .up {
   width: 200px;
 }
 
-footer .volume .right {
+#bottombar .playbox .down {
+  width: 400px;
+}
+
+#bottombar .playbox .down i {
+  padding-left: var(--time-control);
+}
+
+
+/* volume */
+
+#bottombar .volume {
+  font-size: 16px;
+  color: white;
+}
+
+#bottombar .volume .right {
   width: 100px;
 }
 
-footer .play-box .down,
-footer .volume .right {
-  height: 5px;
-  background-color: #797c80;
-  border-radius: 5px;
+#bottombar .volume .right i {
+  padding-left: var(--volume-control); 
+  background-color: red; 
 }

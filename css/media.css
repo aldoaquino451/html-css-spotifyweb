@@ -6,7 +6,7 @@
 -------------------*/
 
 @media screen and (max-width:1100px) {
-  #music .card {
+  #player .card {
     width: var(--card-width-md);
   }
 }  
@@ -19,7 +19,7 @@
 
 
 @media screen and (max-width:700px) {
-  #music .card {
+  #player .card {
     width: var(--card-width-sm);
   }
 }  
@@ -33,19 +33,58 @@
 @media screen and (max-width:600px) {
 
   :root {
-    --sidebar-width: 90px;
+    --sidebar-width: 50px;
+    --logo-height: auto;
+    --menu-height: auto;
+    --bottom-height: auto;
   }
 
   .hide {
     display: none;
   } 
 
-  #sidebar .logo {
-    height: auto;
+  #sidebar svg * {
+    fill: white;
   }
 
+  #sidebar .logo {
+    padding: 10px;
+  }
   #sidebar .logo img:last-child  {
     display: block;
+    width: 100%;
   }
+  
+  #sidebar .menu li {
+    border-left: none;
+    padding: 5px 10px;
+  }
+  #sidebar .menu li svg {
+    width: 30px;
+  }
+
+  #sidebar .bottom {
+    padding: 10px ;
+    gap: 10px;
+    position: absolute;
+    bottom: 0;
+  }  
+
+  #sidebar .bottom .app {
+    padding-bottom: 0px;
+    border-bottom: none;
+  }
+
+  #sidebar .bottom .app svg {
+    width: 100%;
+  }
+
+  #sidebar .bottom .account svg {
+    margin-right: 0px;
+    padding-right: 0px;
+    width: 30px;
+    height: 30px;
+  }
+  
 
 }
