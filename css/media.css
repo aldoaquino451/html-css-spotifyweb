@@ -12,25 +12,11 @@
 }  
 
 
-
-/*------------------
-    MOBILE
--------------------*/
-
-
-@media screen and (max-width:700px) {
-  #player .card {
-    width: var(--card-width-sm);
-  }
-}  
-
-
-
 /*------------------
     MOBILE-sidebar
 -------------------*/
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:700px) {
 
   :root {
     --sidebar-width: 50px;
@@ -88,3 +74,17 @@
   
 
 }
+
+
+
+/*------------------
+    MOBILE
+-------------------*/
+
+
+@media screen and (max-width:600px) {
+  #player .card {
+    width: var(--card-width-sm);
+  }
+}  
+

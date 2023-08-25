@@ -2,6 +2,8 @@
       UTILITIES
 ---------------------*/ 
 
+/* flex  */
+
 .row {
   display: flex;
   flex-direction: row;
@@ -40,38 +42,32 @@
   gap: 15px;
 }
 
+/* text  */
+
 .uppercase {
   text-transform: uppercase;
 }
 
-.hidden {
-  display: none;
-}
-
-.db {
-  /* background-color: lightcoral; */
-  border: 1px solid black;
-}
-
-.db-small {
-  /* background-color: lightblue; */
-  border: 1px solid black;
-}
 
 
+/* active  */
 
 #sidebar .home.active {
-  border-color: #adff2f;
+  border-color: var(--color-active);
+}
+
+#sidebar .home.active svg {
+  opacity: 1;
+}
+
+#sidebar .home.active a {
   color: white;
 }
 
-#sidebar .home.active svg * {
-  fill: white;
-}
 
-#player .menu .active:first-child span {
+/* #player .menu .active:first-child span {
   width: 50px;
   height: 2px;
   margin: 2px auto;
-  background-color: #adff2f;
-}
+  background-color: var(--color-active);
+} */
