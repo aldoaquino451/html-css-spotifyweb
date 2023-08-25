@@ -45,7 +45,7 @@
 /* hoover | active  */
 
 
-a:hover {
+a:not(#bottombar .listening a):hover {
   color: white;
 }
 
@@ -53,6 +53,17 @@ a:hover {
   opacity: 1;
 }
 
+#player .card:hover .image .image-play {
+  display: flex;
+}
+
+#player .topbar a:hover {
+  scale: 1.1;
+}
+
+#bottombar .listening a:hover {
+  text-decoration: underline;
+}
 
 
 
@@ -99,7 +110,7 @@ h3 {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
 }
 
 a {
@@ -229,18 +240,36 @@ ul {
 #player .card {
   width: var(--card-width-lg);
   padding-bottom: 20px;
-  gap: 10px;
 }
 
+#player .card .image {
+  position: relative;
+}
+
+#player .card .image .image-play {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#player .card .image .image-play i {
+  font-size: 50px;
+  color: white;
+}
 
 /* topbar  */
 
 #player .topbar {
   position: fixed;
+  z-index: 99;
   width: var(--player-width);
   height: 90px;
   margin: -110px -20px;
-  padding: 10px 20px;
+  padding: 10px 30px;
   justify-content: flex-end;
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -254,22 +283,17 @@ ul {
 
 /* menu */
 
-
 #player .menu ul {
   flex-wrap: wrap;
   gap: 20px;
 }  
 
-#player .menu a {
-  color: var(--color-darkgrey);
-}  
-
 #player .menu .active::after {
-  content: "";
+  content: '';
   width: 50%;
-  height: 2px;
-  margin: 2px auto;
-  background-color: var(--color-active);
+  height: 3px;
+  margin: 0 auto;
+  background-color: var(--color-player);
 }
 
 
@@ -283,12 +307,12 @@ ul {
 
 /* general  */
 
-#bottombar h2 {
-  font-size: 1rem;
+#bottombar h3{
+  font-size: 14px;
 }
 
-#bottombar h3 {
-  font-size: 1rem;
+#bottombar h4 {
+  font-size: 12px;
 }
 
 #bottombar .playbox .down,
@@ -298,6 +322,23 @@ ul {
   background-color: #797c80;
 }
 
+
+
+#bottombar i {
+  font-size: 18px;
+}
+#bottombar i:hover {
+  color: white;
+}
+#bottombar .playbox .icons i.fa-circle-play {
+  font-size: 30px;
+}
+#bottombar .playbox .icons i.fa-circle-play:hover {
+  color: white;
+  scale: 1.1;
+}
+
+
 /* listening  */
 
 #bottombar .listening {
@@ -305,7 +346,7 @@ ul {
 }
 
 #bottombar .listening .left .image {
-  width: 60px;
+  width: 50px;
 }
 
 #bottombar .listening .right {
@@ -314,42 +355,33 @@ ul {
 
 /* playbox  */
 
-#bottombar .playbox {
-  gap: 20px;
-  font-size: 20px;
-  color: white;
-}
-
-#bottombar .playbox .up {
+#bottombar .playbox .icons {
   width: 200px;
 }
 
-#bottombar .playbox .down {
+#bottombar .playbox .bar-content {
   width: 400px;
+  height: 2px;
+  background-color: var(--color-darkgrey);
+  border-radius: 10px;
 }
 
-#bottombar .playbox .down i {
-  /* display: none; */
-  padding-left: var(--time-control);
+#bottombar .playbox .bar-content i {
   background-color: red; 
   border: 2px solid red;
-  border-radius: 2px;
 }
 
 
 /* volume */
 
-#bottombar .volume {
-  font-size: 16px;
-  color: white;
+#bottombar .volume .bar-content {
+  width: 200px;
+  height: 2px;
+  background-color: var(--color-darkgrey);
+  border-radius: 10px;
 }
 
-#bottombar .volume .right {
-  width: 100px;
-}
-
-#bottombar .volume .right i {
-  padding-left: var(--volume-control); 
+#bottombar .volume .bar-content i {
   background-color: red; 
   border: 2px solid red;
 }

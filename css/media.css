@@ -6,9 +6,19 @@
 -------------------*/
 
 @media screen and (max-width:1100px) {
+  
   #player .card {
     width: var(--card-width-md);
   }
+
+  #bottombar .listening .right {
+    flex-direction: column;
+  }
+
+  #bottombar .volume {
+    flex-direction: column;
+  }
+
 }  
 
 
