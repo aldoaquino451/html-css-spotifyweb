@@ -35,6 +35,12 @@
   --time-control: 30%;
   --volume-control: 70%;
 
+  /*  */
+  --width-slider: 200px;
+  --height-slider: 5px;
+  --width-bar: 40%;
+  --height-pointer: 20px;
+
 }
 
 #calcolatrice {
@@ -307,7 +313,7 @@ ul {
 
 /* general  */
 
-#bottombar h3{
+#bottombar h3 {
   font-size: 14px;
 }
 
@@ -315,29 +321,13 @@ ul {
   font-size: 12px;
 }
 
-#bottombar .playbox .down,
-#bottombar .volume .right {
-  height: 5px;
-  border-radius: 5px;
-  background-color: #797c80;
-}
-
-
-
 #bottombar i {
   font-size: 18px;
 }
+
 #bottombar i:hover {
   color: white;
 }
-#bottombar .playbox .icons i.fa-circle-play {
-  font-size: 30px;
-}
-#bottombar .playbox .icons i.fa-circle-play:hover {
-  color: white;
-  scale: 1.1;
-}
-
 
 /* listening  */
 
@@ -345,43 +335,70 @@ ul {
   gap: 30px;
 }
 
-#bottombar .listening .left .image {
+#bottombar .listening .song .album {
   width: 50px;
 }
 
-#bottombar .listening .right {
+#bottombar .listening .actions {
   font-size: 16px;
 }
 
-/* playbox  */
+/* playbox */
 
-#bottombar .playbox .icons {
-  width: 200px;
+#bottombar .playbox .controller i.fa-circle-play {
+  font-size: 30px;
 }
 
-#bottombar .playbox .bar-content {
-  width: 400px;
-  height: 2px;
+#bottombar .playbox .controller i.fa-circle-play:hover {
+  color: white;
+  scale: 1.1;
+}
+
+
+/* slider bar and pointer */
+
+#bottombar .playbox {
+  max-width: 800px;
+  width: 40%;
+}
+
+#bottombar .slider-box {
+  width: 100%;
+}
+
+#bottombar .playbox .slider {
+  width: 100%;
+}
+
+#bottombar .volume .slider {
+  width: 150px;
+}
+
+#bottombar .slider {
+  height: var(--height-slider);
+  border-radius: var(--height-slider);
   background-color: var(--color-darkgrey);
-  border-radius: 10px;
 }
 
-#bottombar .playbox .bar-content i {
-  background-color: red; 
-  border: 2px solid red;
+#bottombar .slider .bar {
+  width: var(--width-bar);
+  height: var(--height-slider);
+  border-radius: var(--height-slider);
+  background-color: var(--color-lightgrey);
+  position: relative;
 }
 
-
-/* volume */
-
-#bottombar .volume .bar-content {
-  width: 200px;
-  height: 2px;
-  background-color: var(--color-darkgrey);
-  border-radius: 10px;
+#bottombar .slider .bar .pointer {
+  position: absolute;
+  right: calc(var(--height-pointer) * -1/2);
+  font-size: var(--height-pointer);
+  display: none;
 }
 
-#bottombar .volume .bar-content i {
-  background-color: red; 
-  border: 2px solid red;
+#bottombar .slider:hover .bar {
+  background-color: var(--color-active);
+}
+
+#bottombar .slider:hover .bar .pointer {
+  display: flex;
 }
