@@ -38,8 +38,10 @@
   /*  */
   --width-slider: 200px;
   --height-slider: 5px;
-  --width-bar: 40%;
   --height-pointer: 20px;
+  --width-bar: 40%;
+  --time-current: calc(var(--time-total) * var(--width-bar));
+  --time-total: 80;
 
 }
 
@@ -69,6 +71,19 @@ a:not(#bottombar .listening a):hover {
 
 #bottombar .listening a:hover {
   text-decoration: underline;
+}
+
+#bottombar .slider:hover {
+  cursor: pointer;
+}
+
+#bottombar .slider-box:hover .bar {
+  background-color: var(--color-active);
+}
+
+#bottombar .slider-box:hover .bar .pointer {
+  display: flex;
+  color: white;
 }
 
 
@@ -186,8 +201,29 @@ ul {
   overflow-x: auto;
 }
 
-#sidebar .playlist i {
+#sidebar .playlist .new {
+  position: relative;
+}
+
+#sidebar .playlist .new i {
   font-size: 40px;
+}
+
+#sidebar .playlist .new span {
+  display: none;
+}
+
+#sidebar .playlist .new:hover span {
+  display: inline;
+  position: absolute;
+  padding: 6px;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  background-color: #282828;
+  top: -30px;
+  left: -20px;
+  font-weight: 500;
 }
 
 /* bottom */
@@ -335,8 +371,12 @@ ul {
   gap: 30px;
 }
 
-#bottombar .listening .song .album {
+#bottombar .listening .song .cover {
   width: 50px;
+}
+
+#bottombar .listening .song .cover:hover {
+  opacity: 0.5;
 }
 
 #bottombar .listening .actions {
@@ -344,6 +384,11 @@ ul {
 }
 
 /* playbox */
+
+#bottombar .playbox {
+  max-width: 800px;
+  width: 40%;
+}
 
 #bottombar .playbox .controller i.fa-circle-play {
   font-size: 30px;
@@ -354,24 +399,27 @@ ul {
   scale: 1.1;
 }
 
-
-/* slider bar and pointer */
-
-#bottombar .playbox {
-  max-width: 800px;
-  width: 40%;
+#bottombar .playbox .slider-box .time-current,
+#bottombar .playbox .slider-box .time-total {
+  color:  white;
 }
 
-#bottombar .slider-box {
+#bottombar .playbox .slider-box .slider {
   width: 100%;
 }
 
-#bottombar .playbox .slider {
-  width: 100%;
-}
+
+/* volume  */
 
 #bottombar .volume .slider {
   width: 150px;
+}
+
+
+/* slider bar and pointer */
+
+#bottombar .slider-box {
+  width: 100%;
 }
 
 #bottombar .slider {
@@ -393,12 +441,4 @@ ul {
   right: calc(var(--height-pointer) * -1/2);
   font-size: var(--height-pointer);
   display: none;
-}
-
-#bottombar .slider:hover .bar {
-  background-color: var(--color-active);
-}
-
-#bottombar .slider:hover .bar .pointer {
-  display: flex;
 }

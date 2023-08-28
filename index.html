@@ -81,9 +81,14 @@
 
           <h3 class="uppercase">playlist</h3>
 
-          <a href="#" class="new row gap-10 ai-center">
+          <!-- <a href="#" class="new row gap-10 ai-center">
             <i class="fa-solid fa-square-plus"></i>
             <span>Crea Playlist</span>
+          </a> -->
+  
+          <a href="#" class="new row gap-10 ai-center">
+            <i class="fa-solid fa-square-plus"></i>
+            <span>Crea una playlist o una cartella</span>
           </a>
   
           <div class="name">
@@ -396,23 +401,22 @@
   <footer>
 
 
-    <section id="bottombar" class="row s-between ai-center gap-15">
+    <section id="bottombar" class="row jc-between ai-center gap-15">
 
       <!-- LISTENING  -->
       <div class="listening row">
 
         <div class="song row gap-10">
 
-          <div class="album">
-            <img src="./img/sinister.jpeg" alt="sinister">
+          <div class="cover">
+            <a href="#">
+              <img src="./img/sinister.jpeg" alt="sinister">
+            </a>
           </div>
           
           <div class="references col gap-5 jc-center">
-            <a href="#">
-              <h3>Sinister</h3>
-            </a>
-            <a href="#">
-              <h4>Subtitle</h4>
+            <a href="#"><h3>Sinister</h3></a>
+            <a href="#"><h4>Subtitle</h4>
             </a>
           </div>
 
@@ -420,8 +424,13 @@
 
         <div class="actions row gap-10 ai-center">
 
-          <i class="fa-regular fa-heart"></i>
-          <i class="fa-regular fa-folder"></i>
+          <a href="#">
+            <i class="fa-regular fa-heart"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-regular fa-folder"></i>
+          </a>
 
         </div>
   
@@ -432,15 +441,25 @@
       <!-- PLAYBOX  -->
       <div class="playbox col ai-center gap-15">
 
-        <div class="controller row s-between ai-center gap-20">
+        <ul class="controller row jc-between ai-center gap-20">
 
-          <i class="fa-solid fa-shuffle"></i>
-          <i class="fa-solid fa-backward-step"></i>
-          <i class="fa-regular fa-circle-play"></i>
-          <i class="fa-solid fa-forward-step"></i>
-          <i class="fa-solid fa-rotate-right"></i>
+          <li>
+            <a href="#"><i class="fa-solid fa-shuffle"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-backward-step"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-forward-step"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-rotate-right"></i></a>
+          </li>
 
-        </div>
+        </ul>
         
         <div class="slider-box row ai-center gap-10">
 
@@ -469,14 +488,21 @@
 
         <div class="contoller row ai-center gap-15">
 
-          <i class="fa-solid fa-list-ul"></i>
-          <i class="fa-solid fa-desktop"></i>
+          <a href="#">
+            <i class="fa-solid fa-list-ul"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-solid fa-desktop"></i>
+          </a>
 
         </div>
 
-        <div class="value row ai-center gap-10">
+        <div class="slider-box row ai-center gap-10">
 
-          <i class="fa-solid fa-volume-high"></i>
+          <a href="#">
+            <i class="fa-solid fa-volume-high"></i>
+          </a>
 
           <div class="slider">
             <div class="bar row ai-center">

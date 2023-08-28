@@ -14,7 +14,7 @@
   flex-direction: column;
 }
 
-.s-between {
+.jc-between {
   justify-content: space-between;
 }
 
